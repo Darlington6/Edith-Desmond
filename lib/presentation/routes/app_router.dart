@@ -30,29 +30,6 @@ class AppRouter {
         name: 'home',
         builder: (context, state) => const HomeScreen(),
       ),
-      GoRoute(
-        path: '/explore',
-        name: 'explore',
-        builder: (context, state) => const ExploreTab(),
-      ),
-      GoRoute(
-        path: '/addEvent',
-        name: 'addEvent',
-        builder: (context, state) => const EventFormScreen(),
-      ),
-      GoRoute(
-        path: '/creatorDashboard',
-        name: 'creatorDashboard',
-        builder: (context, state) {
-          final userId = state.extra as String?;
-          if (userId == null) {
-            return const Scaffold(
-              body: Center(child: Text('User ID not provided')),
-            );
-          }
-          return CreatorDashboardScreen(userId: userId);
-        },
-      ),
     ],
   );
 }
